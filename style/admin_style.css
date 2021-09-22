@@ -83,7 +83,7 @@
   /* * HEADER */
   
   .header {
-    padding: 15px 45px;
+    padding: 2px 45px;
     font-family: "Noto Serif", serif;
     color: white;
     background: black;
@@ -102,7 +102,7 @@
     float: right;
   }
   .header .logout-btn {
-    color: red;
+    color: white;
     text-decoration: none;
   }
   .header:after {

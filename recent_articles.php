@@ -21,7 +21,7 @@
 
 <?php foreach ($posts as $post): ?>
 	<div class=" post col-lg-6 pt-2" >
-		<img src="<?php echo BASE_URL . '/images/book'; ?>" class="post_image" alt="Image">
+		<img src="<?php echo BASE_URL . '/images'; ?>" class="post_image" alt="Image">
 		
 			<div class="post_info">
 				<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h2> <?php echo $post['title']; ?></h2></a>

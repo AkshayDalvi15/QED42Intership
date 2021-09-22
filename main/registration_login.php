@@ -4,6 +4,8 @@
 	$email    = "";
 	$errors = array(); 
 
+	
+
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form

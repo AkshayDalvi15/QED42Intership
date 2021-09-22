@@ -11,8 +11,14 @@
         <form method="post" action="changepassword.php" >
 			<h3>Change your password</h3>
 			<?php include(ROOT_PATH . '/main/errors.php') ?>
-			<input type="password" name="newpassword" placeholder="Password" required>
-            <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+            <div class="pass_field_div w-100">
+				<input class="pass_field" type="password" name="newpassword" placeholder="Password" style="width:100%;" required>
+				<img src="./images/eye-fill.svg" class="show_pass" alt="Eye">
+			</div>
+            <div class="pass_field_div w-100">
+				<input class="pass_field" type="password" name="confirmpassword" placeholder="Confirm Password" style="width:100%;" required>
+				<img src="./images/eye-fill.svg" class="show_pass" alt="Eye">
+			</div>
             <button type="submit" class="btn btn-primary w-100" name="send" value="Send">change password</button>
             <input type="text" name="id" value="<?php echo $Id?>" hidden> 
             <p>Passwords shall have a minimum of 8 characters with a mix of alphanumeric and special characters</p> 
@@ -45,4 +51,21 @@
             
         }
     ?>
+<script>
+
+const show_pass = document.querySelectorAll(".show_pass");
+const pass_field = document.querySelectorAll(".pass_field");
+
+for (let i = 0; i < show_pass.length; i++) {	
+      show_pass[i].addEventListener("click", function () {
+    if (pass_field[i].type == "password") {
+          pass_field[i].type = "text";
+    } else {
+          pass_field[i].type = "password";
+    }
+});
+}
+
+</script>
+
 </body>

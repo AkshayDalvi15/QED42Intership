@@ -37,6 +37,7 @@
 		<div class="buttons d-flex flex-row justify-content-center">
 			<a href="users.php">Add Users</a>
 			<a href="posts.php">Add Posts</a>
+			<a href="./userProfile.php">Profile</a>
 		</div>
 	</div>
 <?php	} ?>

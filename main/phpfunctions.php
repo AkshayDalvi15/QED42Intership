@@ -2,21 +2,73 @@
 
 //  Returns all published posts
 
+// function getPublishedPosts() {
+// 	global $conn;
+// 	$sql = "SELECT * FROM posts";
+// 	$result = mysqli_query($conn, $sql);
+// 	// fetch all posts 
+// 	$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+// 	return $posts;
+// }
+// function getRecentPosts(){
+// 	global $conn;
+// 	$sql = "SELECT * FROM posts ORDER BY id DESC";
+// 	$result = mysqli_query($conn,$sql);
+// 	$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+// 	return $posts;
+// }
+$total_pages="";
+$page="";
 function getPublishedPosts() {
-	global $conn;
+	global $conn,$total_pages,$page;
+	$results_per_page=3;
 	$sql = "SELECT * FROM posts";
 	$result = mysqli_query($conn, $sql);
-	// fetch all posts 
-	$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
-	return $posts;
+	if(!isset($_GET['page'])){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+	$i=0;
+	$num_of_rows = mysqli_num_rows($result);
+	$total_pages=ceil($num_of_rows/$results_per_page);
+	$start_limit=($page-1)*$results_per_page;
+        $sql="SELECT * FROM posts LIMIT ".$start_limit.','.$results_per_page;
+        $result=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > $i){
+		// fetch all posts 
+		$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+		return $posts;
+		}
 }
+
+
 function getRecentPosts(){
-	global $conn;
-	$sql = "SELECT * FROM posts ORDER BY id DESC";
-	$result = mysqli_query($conn,$sql);
-	$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
-	return $posts;
+	global $conn,$total_pages,$page;
+	$results_per_page=6;
+	$sql = "SELECT * FROM posts";
+	$result = mysqli_query($conn, $sql);
+	if(!isset($_GET['page'])){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+	$i=0;
+	$num_of_rows = mysqli_num_rows($result);
+	$total_pages=ceil($num_of_rows/$results_per_page);
+	$start_limit=($page-1)*$results_per_page;
+        $sql="SELECT * FROM posts ORDER BY id DESC LIMIT ".$start_limit.','.$results_per_page;
+        $result=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > $i){
+		// fetch all posts 
+		$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+		return $posts;
+		}
+	// $sql = "SELECT * FROM posts ORDER BY id DESC";
+
 }
+
+
 function getPost($id){
 	global $conn;
 	$id = $_GET['id'];
