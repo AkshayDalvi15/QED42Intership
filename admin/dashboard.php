@@ -50,6 +50,7 @@
 		<div class="justify-content-center">
 		<div class="buttons d-flex flex-row justify-content-center">
 			<a href="posts.php">Add/Manage Posts</a>
+			<a href="./userProfile.php">Profile</a>
 		</div>
 	</div>
 <?php	} ?>

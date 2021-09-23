@@ -35,7 +35,7 @@ background: linear-gradient(to right, #ec2F4B, #009FFF);
 }
 .stats .col-4 {
   width: 10rem;
-  text-align: center;
+  text-align: left;
 }
 .heading {
   font-weight: 400;
@@ -69,26 +69,26 @@ background: linear-gradient(to right, #ec2F4B, #009FFF);
 
 <section class="profile">
     <header class="Header">
-        <div class="details">
-        <img src="complete-blog-php/images/profile.jpg" alt="John Doe" class="profile-pic">
+      <?php if(isset($profile)) { ?>  
+      <div class="details">
+        <img src="../images/profile.jpg" alt="John Doe" class="profile-pic">
          <h1 class="heading">Name: <?php echo $profile['firstname'] . $profile['lastname'] ?> </h1>
         </div>
         <div class="stats">
-            <div class="col-4">
-            <p>Mobile: <?php echo $profile['mobileno']?></p>
+            <div class="col-3">
+            <p>Role : <?php echo $_SESSION['user']['role'] ?></p>
             <p>Address: <?php echo $profile['address']?></p>
             <p>Description: <?php echo $profile['description']?></p>
             </div>
-            <div class="col-4">
+            <div class="col-3">
             <h4></h4>
-            <p>Communities</p>
-            </div>
-            <div class="col-4">
-            <h4>100</h4>
-            <p>Discussions</p>
+            <p>UserId : <?php echo $_SESSION['user']['id'] ?></p>
+            <p>Mobile: <?php echo $profile['mobileno']?></p>
             </div>
         </div>
-        </div>
+      <?php } else {
+        echo "Profile is not updated, kindly Update it first.";
+      } ?>
     </header>
 </section>
 <div class="container dashboard">

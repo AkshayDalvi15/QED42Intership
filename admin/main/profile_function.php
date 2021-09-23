@@ -31,36 +31,30 @@ function createProfile() {
     if(empty($address)) { array_push($errors, "Please enter correct address"); }
     if(empty($description)) { array_push($errors, "Please enter information about profile user."); }
 
-    $query = "SELECT * FROM profile WHERE user_id = '$userid' LIMIT 1";
+
+    $query = "SELECT * FROM profile WHERE user_id = '$userid'";
     $result = mysqli_query($conn, $query);
     $profile = mysqli_fetch_assoc($result);
 
     // if(!isset($errors)) {
-        if($result) {
+        if($profile) {
 
             $query = "UPDATE profile SET user_id ='$userid', firstname='$firstname', lastname='$lastname', mobileno='$mobileno',address='$address', description='$description'
             WHERE user_id='$userid' ";
 
             mysqli_query($conn,$query);
             $_SESSION['message'] = "profile is Edited successfully";
-
-            echo $mobileno;
-            echo mysqli_error($conn);
-            // header('location: userProfile.php');
-            exit(0);
+            
+            header('location: userProfile.php');
+             exit(0);
         } else {
-
+            
             $query = "INSERT INTO profile (user_id, firstname, lastname, mobileno, address, description)
             VALUES('$userid', '$firstname', '$lastname', '$mobileno', '$address', '$description')";
             mysqli_query($conn, $query);
             $_SESSION['message'] = "profile is created successfully";
-
-            
-            echo mysqli_error($conn);
-            echo $firstname;
-            
-             header('location: userProfile.php');
-             exit(0);
+            header('location: userProfile.php');
+            exit(0);
         }
     // } 
 }
