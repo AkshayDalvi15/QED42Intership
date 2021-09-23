@@ -38,7 +38,6 @@
                     <div class="col-md-6"><label class="labels">Lastname</label><input type="text" class="form-control" value="" placeholder="Enter lastname" name="lastname"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label style="margin: 5px auto 5px;">Profile image</label></br><input type="file" name="profile_image"></div>
                     <div class="col-md-6"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter 10 digit mobile number" name="mobileno" value=""></div>
                     <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="Enter full address" name="address" value=""></div>
                     <div class="col-md-12"><label class="labels">Description</label><input type="text" class="form-control" placeholder="Education" name="description" value=""></div>

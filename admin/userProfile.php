@@ -60,23 +60,24 @@ background: linear-gradient(to right, #ec2F4B, #009FFF);
                 </div>
             <?php endif ?>
     </div>
-    <!-- <?php  
-    // $userid = $_SESSION['user_id'];
-    // $query = "SELECT * FROM profile where user_id = $userid;";
-    // $result = mysqli_query($conn, $query);
-    // $profile = mysqli_fetch_assoc($result);
-    ?>  -->
+   <?php  
+     $userid = $_SESSION['user']['id'];
+     $query = "SELECT * FROM profile where user_id = $userid;";
+     $result = mysqli_query($conn, $query);
+     $profile = mysqli_fetch_assoc($result);
+    ?>  
 
 <section class="profile">
     <header class="Header">
         <div class="details">
-        <img src="<?php ?>" alt="John Doe" class="profile-pic">
-        <!-- <h1 class="heading"><?php echo $profile['firstname'] . $profile['lastname'] ?> </h1> -->
+        <img src="complete-blog-php/images/profile.jpg" alt="John Doe" class="profile-pic">
+         <h1 class="heading">Name: <?php echo $profile['firstname'] . $profile['lastname'] ?> </h1>
         </div>
         <div class="stats">
             <div class="col-4">
-            <h4>Name: </h4>
-            <p></p>
+            <p>Mobile: <?php echo $profile['mobileno']?></p>
+            <p>Address: <?php echo $profile['address']?></p>
+            <p>Description: <?php echo $profile['description']?></p>
             </div>
             <div class="col-4">
             <h4></h4>
