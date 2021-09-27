@@ -49,16 +49,16 @@
 		<span><a href="logout.php">Logout</a></span>
 	</div>
 <?php }else{ ?>
-	<div class="row banner">
-		<div class="col-lg-6 " style="color=Gray;">
-		<h1 > 
+	<div class="row banner">                                                       
+		<div class="col-lg-6 " style="color:Gray;">
+		<h1>
 		Blogging is good for your career.<br> A well-executed blog sets you apart as an expert in your field<br> by Penelope Trunk
 		</h1>
 			<a href="register.php" class="btn btn-primary ml-auto mr-auto p-2 mt-lg-5">Register Here</a>
 	</div>
 		 <div class="col-lg-6 ">
 			<form action="<?php echo BASE_URL . 'index.php'; ?>" method="post" >
-			<h2 style="color=Gray;">Login</h2>
+			<h2 style="color:Gray;">Login</h2>
 				<div style="width: 60%; margin: 0px auto;">
 					<?php include(ROOT_PATH . '/main/errors.php') ?>
 				</div>

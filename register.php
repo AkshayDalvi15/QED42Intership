@@ -1,6 +1,7 @@
 <?php  include('config.php'); ?>
-<?php  include('main/registration_login.php'); ?>
+<!-- <?php // include('main/registration_login.php'); ?> -->
 <?php include('main/head_section.php'); ?>
+<?php include('admin/Class/User.php'); ?>
 
 <title>BlogSpot | Sign up </title>
 </head>
