@@ -1,0 +1,29 @@
+{
+  "name": "complete-blog-php",
+  "version": "1.0.0",
+  "description": "Blog website created using HTML, CSS and PHP.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkshayDalvi15/complete-blog-php.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkshayDalvi15/complete-blog-php/issues"
+  },
+  "homepage": "https://github.com/AkshayDalvi15/complete-blog-php#readme",
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.42.1"
+  }
+}
