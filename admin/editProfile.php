@@ -1,15 +1,8 @@
 <?php  include('../config.php'); ?>
 	
 	<?php include(ROOT_PATH . '/admin/main/head_section.php'); ?>
-    <?php include(ROOT_PATH . '/admin/main/profile_function.php'); ?>
-    <?php if(isset($_POST['Edit_profile'])){
-        // extract($_POST);
-        // echo $firstname;
-        // echo $_SESSION['user']['id'];
-        // print_r($_SESSION['message']);
-    
-    } 
-           ?>
+    <!-- <?php //include(ROOT_PATH . '/admin/main/profile_function.php'); ?> -->
+    <?php include(ROOT_PATH . '/admin/Class/Profile.php'); ?>
 	<title>Edit User Profile</title>
 </head>
 <body>
@@ -25,7 +18,17 @@
                     <span><?php echo $_SESSION['user']['username'] ?></span> &nbsp; &nbsp; 
                     <a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout-btn">logout</a>
                 </div>
-            <?php endif ?>
+            <?php endif ?> 
+            <?php
+            //New Instance of Profile class for getProfile function.
+            $pro = new Profile();
+            $profile = $pro->getProfile();
+            
+            if (isset($_POST['Edit_profile'])) {
+                $pro->createProfile();
+            }
+
+            ?> 
     </div>
     <div class="col-md-7 border-right">
         <div class="p-3 py-5">
@@ -34,16 +37,15 @@
                     <h4 class="text-right">Edit Profile</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Firstname</label><input type="text" class="form-control" placeholder="Enter firstname" name="firstname" value=""></div>
-                    <div class="col-md-6"><label class="labels">Lastname</label><input type="text" class="form-control" value="" placeholder="Enter lastname" name="lastname"></div>
+                    <div class="col-md-6"><label class="labels">Firstname</label><input type="text" class="form-control" placeholder="Enter firstname" name="firstname" value="<?php if(isset($profile['firstname'])) { echo $profile['firstname'];}?>"></div>
+                    <div class="col-md-6"><label class="labels">Lastname</label><input type="text" class="form-control" value="<?php if(isset($profile['lastname'])) { echo $profile['lastname'];}?>" placeholder="Enter lastname" name="lastname"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter 10 digit mobile number" name="mobileno" value=""></div>
-                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="Enter full address" name="address" value=""></div>
-                    <div class="col-md-12"><label class="labels">Description</label><input type="text" class="form-control" placeholder="Education" name="description" value=""></div>
+                    <div class="col-md-6"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter 10 digit mobile number" name="mobileno" value="<?php if(isset($profile['mobileno'])) { echo $profile['mobileno'];}?>"></div>
+                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="Enter full address" name="address" value="<?php if(isset($profile['address'])) { echo $profile['address'];}?>"></div>
+                    <div class="col-md-12"><label class="labels">Description</label><input type="text" class="form-control" placeholder="Education" name="description" value="<?php if(isset($profile['description'])) { echo $profile['description'];}?>"></div>
                     <button type="submit" class="btn" name="Edit_profile" >Edit Profile</button>
                 </div>
-            </div>
             </form>
         </div>
     </div>
