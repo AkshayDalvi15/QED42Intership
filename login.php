@@ -1,7 +1,8 @@
 <?php  include('config.php'); ?>
 <?php  include('main/registration_login.php'); ?>
 <?php  include('main/head_section.php'); ?>
-<!-- <?php // include('admin/Class/User.php'); ?> -->
+<?php  include('admin/Class/User.php'); ?>
+
 	<title>Blog World | Sign in </title>
 </head>
 <body>
@@ -34,12 +35,12 @@ const show_pass = document.querySelectorAll(".show_pass");
 const pass_field = document.querySelectorAll(".pass_field");
 
 for (let i = 0; i < show_pass.length; i++) {	
-      show_pass[i].addEventListener("click", function () {
-    if (pass_field[i].type == "password") {
-          pass_field[i].type = "text";
-    } else {
-          pass_field[i].type = "password";
-    }
+	show_pass[i].addEventListener("click", function () {
+	if (pass_field[i].type == "password") {
+		pass_field[i].type = "text";
+	} else {
+		pass_field[i].type = "password";
+	}
 });
 }
 

@@ -1,5 +1,6 @@
-<?php require_once('config.php') ?>
-<?php require_once( ROOT_PATH . '/main/phpfunctions.php') ?>
+<?php require_once('config.php'); ?>
+<?php require_once( ROOT_PATH . '/main/phpfunctions.php'); ?>
+<?php require_once('admin/Class/Comment.php'); ?>
 
 <?php 
 	if (isset($_GET['title'])) {
@@ -13,6 +14,13 @@
 		$post = getPost($_GET['id']);
 	} 
 ?> 
+<?php if(isset($_POST["comment_btn"])) {
+			$Comment = new Comment();
+			$Comment->AddComment();
+			// 
+			// exit;
+}  ?>
+ <link rel="stylesheet" href="style/comment.css"> 
 </head>
 <body style="background-color: #FBFCFF;">
 <?php require_once('main/navbar.php') ?>
@@ -34,5 +42,42 @@
 				</div>
 			</div>
 	</div>
-<?php endforeach ?>
+
+	
+		<!-- comment box -->
+
+	<div class="detailBox container-fluid w-50 ml-auto mr-auto mt-5 bg-light">	
+    <div class="titleBox">
+      <label>Comment Box</label>
+        
+    </div>
+	<?php 
+		$comment = new Comment();
+		$allcomment = $comment->showComment($_GET['id']); 
+		
+		echo '<div class="actionBox">'; 
+		foreach($allcomment as $comment) { 
+		?>
+		<ul class="commentList">
+			<li>
+		<div class="commentText">
+			<span><?php echo $comment['username']; ?></span>
+			<p class=""><?php echo $comment['comment_desc']; ?></p> 
+		</div>
+			</li>
+		</ul>
+		<?php } ?>	
+        <form class="form-inline" role="form" action="" method="post">
+            <div class="form-group">
+				<input type="text" value="<?php echo $_GET['id'] ?>" name="post_id" hidden>
+                <input class="form-control" type="text" placeholder="Your comments" name="desc">
+            </div>
+            <div class="form-group mar">
+                <button class="btn btn-default" name="comment_btn">Comment</button>
+            </div>
+        </form>
+    </div>
+</div>
+<?php endforeach 
+?>
 </body>

@@ -1,7 +1,8 @@
-<?php require_once('config.php') ?>
-<?php require_once( ROOT_PATH . '/main/registration_login.php') ?>
-<?php require_once('main/head_section.php') ?>
-<?php require_once( ROOT_PATH . '/main/phpfunctions.php') ?>
+<?php require_once('config.php'); ?>
+<!-- <?php //require_once( ROOT_PATH . '/main/registration_login.php') ?> -->
+<?php require_once('main/head_section.php'); ?>
+<?php require_once( ROOT_PATH . '/main/phpfunctions.php'); ?>
+<?php require_once('admin/Class/User.php'); ?>
 
 <!-- Retrieve all posts from database  -->
 <?php $posts = getPublishedPosts(); ?>
@@ -23,18 +24,19 @@
 			
 
 <?php foreach ($posts as $post): ?>
-	<div class=" post col-lg-6 pt-2" style="" >
-		
-			<div class="post_info">
-				<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h1> <?php echo $post['title']; ?></h1></a>
-				<div class="justify-content-between m-1">
-					<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-					<img src="<?php echo BASE_URL . 'images/' . $post['image']; ?>" class="post_image" alt="Image">
-					<a href="show_post.php?id=<?php echo $post['id']; ?>"></br> <span class="read_more">Read more...</span> </a>
-                    </div>
-				</div>
-			
+	<div class=" post col-lg-8 pt-2" >
+		<div class="post_info">
+			<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h2> <?php echo $post['title']; ?></h2></a>
+			<div class="justify-content-between m-1">
+				<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
+				<img style="position:absolute; bottom:60px; left:10px;" src="<?php echo BASE_URL . 'images/' . $post['image']; ?>" class="post_image" alt="Image">
+				<!-- <div style="display:inline-block;"> -->
+					<a style="position:absolute; bottom:0; left:0;" href="show_post.php?id=<?php echo $post['id']; ?>"></br> <span class="read_more">Read more...</span> </a>
+				<!-- <div> -->
 			</div>
+		</div>
+			
+	</div>
 <?php endforeach ?>
 
 
