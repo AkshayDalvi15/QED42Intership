@@ -37,13 +37,13 @@
                     <h4 class="text-right">Edit Profile</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Firstname</label><input type="text" class="form-control" placeholder="Enter firstname" name="firstname" value="<?php if(isset($profile['firstname'])) { echo $profile['firstname'];}?>"></div>
+                    <div class="col-md-6"><label class="labels">Firstname</label><input type="text" class="form-control" placeholder="Enter firstname" name="firstname" value="<?php if(isset($profile['firstname'])) { echo $profile['firstname'];}?>" ></div>
                     <div class="col-md-6"><label class="labels">Lastname</label><input type="text" class="form-control" value="<?php if(isset($profile['lastname'])) { echo $profile['lastname'];}?>" placeholder="Enter lastname" name="lastname"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter 10 digit mobile number" name="mobileno" value="<?php if(isset($profile['mobileno'])) { echo $profile['mobileno'];}?>"></div>
                     <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="Enter full address" name="address" value="<?php if(isset($profile['address'])) { echo $profile['address'];}?>"></div>
-                    <div class="col-md-12"><label class="labels">Description</label><input type="text" class="form-control" placeholder="Education" name="description" value="<?php if(isset($profile['description'])) { echo $profile['description'];}?>"></div>
+                    <div class="col-md-12"><label class="labels">Description</label><input type="text" class="form-control" placeholder="Short Introduction" name="description" value="<?php if(isset($profile['description'])) { echo $profile['description'];}?>"></div>
                     <button type="submit" class="btn" name="Edit_profile" >Edit Profile</button>
                 </div>
             </form>

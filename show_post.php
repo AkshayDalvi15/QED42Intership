@@ -61,7 +61,7 @@
 		<ul class="commentList">
 			<li>
 		<div class="commentText">
-			<span><?php echo $comment['username']; ?></span>
+			<span><b><?php echo $comment['username']; ?></b></span>
 			<p class=""><?php echo $comment['comment_desc']; ?></p> 
 		</div>
 			</li>
@@ -70,7 +70,7 @@
         <form class="form-inline" role="form" action="" method="post">
             <div class="form-group">
 				<input type="text" value="<?php echo $_GET['id'] ?>" name="post_id" hidden>
-                <input class="form-control" type="text" placeholder="Your comments" name="desc">
+                <input class="form-control" type="text" placeholder="Your comments" name="desc" required>
             </div>
             <div class="form-group mar">
                 <button class="btn btn-default" name="comment_btn">Comment</button>
