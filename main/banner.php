@@ -44,7 +44,7 @@
 
 <?php if (isset($_SESSION['user']['username'])) { ?>
 	<div class="logged_in_info">
-		<span class="p-2">Welcome <?php echo $_SESSION['user']['username'] ?></span>
+		<span class="p-2">Welcome <a href="./admin/userProfile.php"><?php echo $_SESSION['user']['username'] ?></a></span>
 		|
 		<span><a href="logout.php">Logout</a></span>
 	</div>
