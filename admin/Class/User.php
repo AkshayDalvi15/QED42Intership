@@ -141,12 +141,9 @@ class User extends Database
     }
 }
 
-$logUser = new User();
-
+$logUser = new User();				//User object is created.
 if (isset($_POST['login_btn'])) {
     $logUser->Login();
 }
 
-if (isset($_POST['reg_user'])) {
-    $logUser->RegisterUser();
-}
+

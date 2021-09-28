@@ -37,7 +37,7 @@
 				<div class="d-flex justify-content-center align-items-center">
 				<img src="<?php echo BASE_URL . 'images/' . $post['image']; ?>" class="img-fluid pt-2" alt="image">
 				</div>
-                <p class=" text-center pt-5">(<?php  echo html_entity_decode($post['content'])?></p>                        
+                <p class=" text-center pt-5"><?php  echo html_entity_decode($post['content'])?></p>                        
 		<div class="d-flex justify-content-between pt-2"><span class="lead">Created At: <?php echo $post['created_at'] ?></span><span class="lead">Updated At: <?php echo $post['updated_at'] ?></span> </div>
 				</div>
 			</div>

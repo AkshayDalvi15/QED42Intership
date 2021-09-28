@@ -75,7 +75,8 @@
 		</div> 
 </div>
 
-<?php } ?>
+<?php } 
+?>
 
 <script>
 

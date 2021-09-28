@@ -2,7 +2,11 @@
 <?php  include('main/registration_login.php'); ?>
 <?php  include('main/head_section.php'); ?>
 <?php  include('admin/Class/User.php'); ?>
-
+<?php 
+$logUser = new User();
+if (isset($_POST['login_btn'])) {
+    $logUser->Login();
+}	?>
 	<title>Blog World | Sign in </title>
 </head>
 <body>
