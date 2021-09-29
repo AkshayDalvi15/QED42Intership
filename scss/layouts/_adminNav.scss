@@ -1,0 +1,28 @@
+.header {
+  padding: 2px 45px;
+  font-family: "Noto Serif", serif;
+  color: white;
+  background: black;
+}
+.header .logo {
+  width: 50%;
+  float: left;
+}
+.header .logo h1 {
+  color: white;
+}
+.header .user-info {
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  float: right;
+}
+.header .logout-btn {
+  color: white;
+  text-decoration: none;
+}
+.header:after {
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -38,6 +38,7 @@
     background: transparent;
     border: 1px solid #3e606f;
   }
+  
   input[type="checkbox"] {
     height: 20px;
     float: left;
@@ -226,12 +227,12 @@
   .table-div .delete {
     background: #f70e1a;
   }
-  .table-div .publish {
+  /* .table-div .publish {
     background: red;
   }
   .table-div .unpublish {
     background: green;
-  }
+  } */
   
   /* * VALIDATION ERRORS */
   

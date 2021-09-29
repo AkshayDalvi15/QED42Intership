@@ -1,0 +1,36 @@
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 20px auto;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+th {
+  text-align: center;
+}
+
+.table-div {
+  float: left;
+  width: 47%;
+}
+.table-div .message {
+  width: 90%;
+  margin-top: 20px;
+}
+.table-div table {
+  width: 90%;
+}
+.table-div a.fa {
+  color: white;
+  padding: 3px;
+}
+.table-div .edit {
+  background: #004220;
+}
+.table-div .delete {
+  background: #f70e1a;
+}

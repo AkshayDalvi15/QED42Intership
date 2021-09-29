@@ -1,0 +1,13 @@
+#carouselExampleCaptions {
+  max-height: 550px;
+  padding: 5px;
+}
+
+#carouselExampleCaptions {
+  & .carousel-inner {
+    & .carousel-item img {
+      max-height: 550px;
+      image-rendering: pixelated;
+    }
+  }
+}
