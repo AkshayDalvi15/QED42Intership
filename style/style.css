@@ -47,7 +47,7 @@
     padding: 13px 13px;
     font-size: 1em;
     margin: 5px auto 10px;
-    border-radius: 3px;
+    border-radius: 3px; 
     box-sizing: border-box;
     background: transparent;
     border: 1px solid #3e606f;
@@ -181,6 +181,24 @@
     background-size: 100%;
   }
   
+  .post {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    min-height: 500px;
+    background: white;
+  }
+
+  .show-post {
+    padding: 10px;
+    min-height: 100vh;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  
+  .container .post a {
+    text-decoration: none;
+  }
   
   .message {
     width: 100%;
@@ -203,24 +221,7 @@
     text-align: right;
   }
  
-  .post {
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    min-height: 500px;
-    background: white;
-  }
 
-  .show-post {
-    padding: 10px;
-    min-height: 100vh;
-    border: 2px solid white;
-    border-radius: 5px;
-  }
-  
-  .container .post a {
-    text-decoration: none;
-  }
 
       /* show password */
 .pass_field_div {

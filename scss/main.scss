@@ -1,5 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  background-color: red;
-}
+@import "./base/reset";
+@import "./base/mainTypography";
+@import "./layouts/mainNav";
+@import "./components/carousel";
+@import "./components/button";
+@import "./components/message";
+@import "./components/mainForm";
+@import "./layouts/footer";
+@import "./pages/banner";
+@import "./pages/index";
+@import "./pages/showPost";

@@ -1,0 +1,28 @@
+form h2 {
+  margin: 25px auto;
+  text-align: center;
+  font-family: "Averia Serif Libre", cursive;
+}
+form input {
+  width: 100%;
+  display: block;
+  padding: 13px 13px;
+  font-size: 1em;
+  margin: 5px auto 10px;
+  border-radius: 3px; 
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid #3e606f;
+}
+form input:focus {
+  outline: none;
+}
+
+.pass_field_div {
+  position: relative;
+}
+.show_pass {
+  position: absolute;
+  top: 30%;
+  right: 4%;
+}
